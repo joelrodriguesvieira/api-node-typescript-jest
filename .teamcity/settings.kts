@@ -54,32 +54,13 @@ object CIPipeline : BuildType({
                  npx tsc # Para gerar a pasta 'dist'
              """.trimIndent()
         }
-        */
-
-        // Opcional: Passo para Buildar a Imagem Docker
-        // Geralmente, buildar a imagem docker é um passo que acontece *depois* dos testes de unidade/integracao passarem,
-        // e o artefato (a imagem) é usada para deploy. Pode ser parte da CI ou de uma Build Config de CD separada.
-        // Se quiser incluir na CI como um teste de que o Dockerfile funciona:
-        /*
-        script {
-             name = "Build Imagem Docker"
-             workingDir = "" // Onde o Dockerfile esta (geralmente na raiz)
-             scriptContent = """
-                 docker build -t seu-nome-imagem:${build.vcs.number} .
-                 # -t: Tag da imagem. ${build.vcs.number} e uma variavel TeamCity para o numero do commit/versao VCS.
-                 # .: Onde procurar o Dockerfile (diretorio atual)
-             """.trimIndent()
-             // Opcional: Publicar a imagem buildada como artefato (se o agente tiver acesso a um registry)
-             // artifact(".docker/cache => docker_cache") # Exemplo, pode variar
-        }
-        */
     }
 
     triggers {
         vcs {
             // Dispara esta build config em cada commit
             // Opcional: Filtra para disparar apenas em commits na branch 'develop'
-            branchFilter = "+:refs/heads/develop */"
+            branchFilter = "+:refs/heads/develop"
         }
     }
 
