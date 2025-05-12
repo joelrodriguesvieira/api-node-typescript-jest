@@ -9,7 +9,6 @@ versionedSettings {
     mode = VersionedSettings.Mode.ENABLED
 }
 
-// Define a configuracao de build para o pipeline CI (Build, Lint, Test)
 object CIPipeline : BuildType({
     id("Projeto_API_And_Test") // ID unico para esta build config
     name = "CI - Build, Teste Node.js" // Nome na UI
