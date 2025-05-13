@@ -4,8 +4,8 @@ import jetbrains.buildServer.configs.kotlin.triggers.*
 import jetbrains.buildServer.configs.kotlin.vcs.*
 
 object CIPipeline : BuildType({
-    id("Projeto_API_And_Test")
-    name = "CI - Build e Teste Node.js"
+    id("ApiNodeTypescriptJest_Build")
+    name = "Build"
 
     vcs {
         root(RelativeId("ApiNodeTypescriptJest_HttpsGithubComJoelrodriguesvieiraApiNodeTypescriptJestRefsHeadsMain")) // Assumindo que "ApiNodeTypescriptJest" é o ID do seu VCS Root
