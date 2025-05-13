@@ -1,5 +1,3 @@
-// .teamcity/settings.kts na raiz do seu repositorio Node.js
-
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.*
 import jetbrains.buildServer.configs.kotlin.triggers.*
@@ -10,7 +8,7 @@ object CIPipeline : BuildType({
     name = "CI - Build e Teste Node.js"
 
     vcs {
-        root(RelativeId("ApiNodeTypescriptJest")) // Assumindo que "ApiNodeTypescriptJest" é o ID do seu VCS Root
+        root(RelativeId("ApiNodeTypescriptJest_HttpsGithubComJoelrodriguesvieiraApiNodeTypescriptJestRefsHeadsMain")) // Assumindo que "ApiNodeTypescriptJest" é o ID do seu VCS Root
     }
 
     steps {
