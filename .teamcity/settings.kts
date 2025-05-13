@@ -5,10 +5,6 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.*
 import jetbrains.buildServer.configs.kotlin.triggers.*
 import jetbrains.buildServer.configs.kotlin.vcs.*
 
-versionedSettings {
-    mode = VersionedSettings.Mode.ENABLED
-}
-
 object CIPipeline : BuildType({
     id("Projeto_API_And_Test")
     name = "CI - Build e Teste Node.js"
